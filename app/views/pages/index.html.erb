@@ -1,11 +1,19 @@
-<h1>Wiki Pages</h1>
+<div class="container mx-auto flex flex-wrap py-6">
+  <h1 class="text-3xl font-bold underline">
+    Wiki Pages
+  </h1>
 
-<ul>
-  <% @pages.each do |page| %>
-    <li>
-      <%= link_to page.title, page %>
-    </li>
-  <% end %>
-</ul>
+  <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+    <% @pages.each do |page| %>
+      <article class="flex flex-col shadow my-4">
+        <div class="bg-white flex flex-col justify-start p-6">
+          <%= link_to page.title, page, class: 'text-blue-700 text-sm font-bold uppercase pb-4' %>
+        </div>
+      </article>
+    <% end %>
+  </section>
 
-<p> <%= link_to 'New wiki page', new_page_path %> </p>
+  <div class="flex items-center py-8">
+    <%= link_to 'New wiki page', new_page_path, class: 'h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center' %>
+  </div>
+</div>
