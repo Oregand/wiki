@@ -3,9 +3,9 @@
 <ul>
   <% @pages.each do |page| %>
     <li>
-      <a href='<%=page_path(page)%>'>
-        <%= page.title %>
-      </a>
+      <%= link_to page.title, page %>
     </li>
   <% end %>
 </ul>
+
+<p> <%= link_to 'New wiki page', new_page_path %> </p>
