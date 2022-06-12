@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
 
-  resources :pages
+  resources :pages do
+    member do      
+      get "versions", to: "pages#versions"
+    end
+  end
 end

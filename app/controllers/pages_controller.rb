@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-
+  
   def index
     @pages = Page.all
   end
@@ -42,6 +42,10 @@ class PagesController < ApplicationController
     @page.destroy
 
     redirect_to root_path, status: :see_other
+  end
+
+  def versions
+    @pages = @page.versions
   end
 
   private
